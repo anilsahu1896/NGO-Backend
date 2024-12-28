@@ -12,7 +12,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://anilsahu1896:Madhushukla1!@cluster0.zklau.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://anilsahu1896:Madhushukla1!@cluster0.zklau.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000,
+    socketTimeoutMS: 30000,
+})
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
