@@ -9,4 +9,5 @@ const followUpSchema = new mongoose.Schema({
     status: String
 });
 
-module.exports = mongoose.model('FollowUp', followUpSchema);
+// Explicitly specify the collection name 'Followup' instead of the default pluralized 'followups'
+module.exports = mongoose.model('FollowUp', followUpSchema, 'FollowUp');
