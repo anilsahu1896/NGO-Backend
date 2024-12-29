@@ -9,4 +9,5 @@ const mediaSchema = new mongoose.Schema({
     description: String
 });
 
-module.exports = mongoose.model('Media', mediaSchema);
+// Explicitly specify the collection name 'Media' instead of the default pluralized 'media'
+module.exports = mongoose.model('Media', mediaSchema, 'Media');

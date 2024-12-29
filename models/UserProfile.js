@@ -11,4 +11,5 @@ const userProfileSchema = new mongoose.Schema({
     user_type: String
 });
 
-module.exports = mongoose.model('UserProfile', userProfileSchema);
+// Explicitly specify the collection name 'UserProfile' instead of the default pluralized 'userprofiles'
+module.exports = mongoose.model('UserProfile', userProfileSchema, 'UserProfile');
